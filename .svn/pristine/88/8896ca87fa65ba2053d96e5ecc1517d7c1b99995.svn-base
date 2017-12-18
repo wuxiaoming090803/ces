@@ -1,0 +1,37 @@
+<!--pages/tpo/tpo.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">时间地点</text>
+  <view class="tpo-content">
+    <view class="tpo-time">
+        <text class="time-text">时间地点</text>
+        <image src="../../imag/menu/bg_active.png" class="time-img"></image>
+    </view>
+    <view class="tpo-add">
+        <view class="tpo-add-text">海宁雷迪森钱江君廷酒店</view>
+        <view class="tpo-add-time">时间:2017/12/15--12/17</view>
+    </view>
+    <view class="tpo-map">
+      <text class="map-text">海宁盐官镇观潮景区临江路3号(近环城南路)</text>
+      <view class="map">
+        <image src="../../imag/map.png" class="map-img"></image>
+      </view>
+    </view>
+  </view>
+  <view class="footer-box">
+      <image src="../../imag/menu/menu_bg.png" class="menu-bg"></image>
+      <view class="footer-nav active">
+        <image src="../../imag/menu/bg_active.png" class="active-img"></image>
+        <image src="../../imag/menu/guide_active.png" class="nav-guide"></image>
+        <text>会议指南</text>
+      </view>
+      <navigator class="footer-nav" url="../vote/vote">
+         <image src="../../imag/menu/vote.png" class="nav-guide"></image>
+          <text>会议投票</text>
+      </navigator>
+      <navigator class="footer-nav" url="../sign/sign">
+        <image src="../../imag/menu/sign.png" class="nav-guide"></image>
+        <text>会议签到</text>
+      </navigator>
+   </view>
+  </view>

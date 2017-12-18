@@ -1,0 +1,117 @@
+/* pages/home/home.wxss */
+.container {
+  background-color: #fff5e3;
+  min-height: 100%;
+  padding-bottom: 100rpx;
+}
+.meeting-type{
+  display:flex;
+  justify-content:space-between;
+  height:100%;
+  position:relative;
+  flex-wrap:wrap;
+  margin:0 auto;
+  width:90%;
+  margin-top:40rpx;
+}
+.ces-logo{
+  width: 100%;
+  height: 100rpx;
+}
+.meeting-title{
+  position:absolute;
+  text-align:center;
+  width:100%;
+  height:100rpx;
+  line-height:100rpx;
+  color:#fff;
+  font-size:36rpx;
+  top: 0;
+  left: 0;
+}
+.core-item-icon{
+  width:319rpx;
+  height:278rpx;
+}
+.core-item-name{
+  display:block;
+  font-size:39rpx;
+  position:absolute;
+  top:12rpx;
+  left:15rpx;
+  color:#860500;
+}
+.meeting-item{
+  display:flex;
+  flex-direction:row;
+  align-items:stretch;
+  justify-content:space-around;
+  margin-top:58rpx;
+  padding-left:30rpx;
+  padding-right:30rpx;
+  height:250rpx;
+  position:relative;
+}
+.main-core-item{
+  position: relative;
+  text-align: center;
+ margin-bottom:30rpx;
+
+}
+.footer-box{
+  height:120rpx;
+  display:flex;
+  width:100%;
+  position:fixed;
+  bottom:0;
+  left:0;
+  border-top: 1px solid #b79f9f;
+}
+.menu-bg{
+  position: absolute;
+  width: 100%;
+  height:100%;
+}
+.active-img{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index:-1;
+  width:100%;
+}
+.footer-nav.active{
+  position: relative;
+}
+.footer-nav.active text{
+  color: #fff;
+}
+.nav-guide{
+  width:50rpx;
+  height:50rpx;
+  display:block;
+  left:50%;
+  margin-left:-25rpx;
+  position:relative;
+
+}
+.footer-nav text{
+  display:block;
+  flex:1;
+  text-align:center;
+  color: #d63700;
+  margin-top:10rpx;
+}
+.footer-nav{
+  height:120rpx;
+  flex:1;
+  text-align:center;
+  font-size:29rpx;
+
+  z-index:10;
+  padding-top:15rpx;
+}
+.footer-nav:not(:last-child){
+  border-right:1px solid #fff;
+}

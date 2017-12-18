@@ -1,0 +1,260 @@
+<!--pages/schedule/schedule.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">会议议程</text>
+  <view class="schedule-content">
+   <image src="../../imag/sign_bg.png" class="meeting-bg"></image>
+    <scroll-view scroll-y="true" class='dinner-scroll' scroll-top="{{scrollTop}}">
+      <view class="schedule-tabs" >
+        <view class="schedule-tab {{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-current="0" bindtap="tabFun">
+            <view class="tab-date">12月15号</view>
+            <view class="tab-week">(周五)</view>  
+            <image src="../../imag/menu/bg_active.png" class="tab-img {{tabArr.curHdIndex=='0'? 'active' : ''}}"></image>        
+        </view>
+        <view class="schedule-tab {{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-current="1" bindtap="tabFun">
+            <view class="tab-date">12月16号</view>
+            <view class="tab-week">(周六)</view>
+            <image src="../../imag/menu/bg_active.png" class="tab-img {{tabArr.curHdIndex=='1'? 'active' : ''}}"></image>          
+        </view>
+        <view class="schedule-tab {{tabArr.curHdIndex=='2'? 'active' : ''}}" id="tab-hd03" data-current="2" bindtap="tabFun">
+            <view class="tab-date">12月17号</view>
+            <view class="tab-week">(周日)</view>
+            <image src="../../imag/menu/bg_active.png" class="tab-img {{tabArr.curHdIndex=='2'? 'active' : ''}}"></image>    
+        </view>
+      </view>
+      <view class="tab-content {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+          <view class="date-detail am ">
+              <view class="tableContent">
+                <view class="tr">
+                    <view class="td">7:30-10:00</view>
+                    <view class="td">公司 —> 酒店</view>
+                </view>
+                <view class="tr spectial">
+                    <view class="td">10:00-10:30</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:人力资源管理中心</text>
+                      <text class="td-content">主讲人:李晓炬</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">10:30-11:30</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr">
+                    <view class="td">11:30-13:30</view>
+                    <view class="td">自助午餐、办理入住</view>
+                </view>
+              </view>
+          </view>
+          <view class="date-detail pm">
+              <view class="tableContent">
+                <view class="tr spectial">
+                    <view class="td">13:30-14:00</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:财务及行政管理中心</text>
+                      <text class="td-content">主讲人:张颖</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">14:00-15:00</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr spectial" >
+                    <view class="td">15:00-15:30</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:采购管理中心</text>
+                      <text class="td-content">主讲人:葛静燕</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">15:30-16:30</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr">
+                    <view class="td">16:30-16:50</view>
+                    <view class="td">休息</view>
+                </view>
+                <view class="tr spectial" >
+                    <view class="td">16:50-17:10</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:保密委员会及质量管理中心</text>
+                      <text class="td-content">主讲人:时泂</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">17:10-17:40</view>
+                    <view class="td">休息</view>
+                </view>
+                <view class="tr spectial" >
+                    <view class="td">17:40-18:00</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:总裁办公室</text>
+                      <text class="td-content">主讲人:潘文靓</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">18:00-18:30</view>
+                    <view class="td">休息</view>
+                </view>
+                <view class="tr">
+                    <view class="td">18:30</view>
+                    <view class="td">晚餐</view>
+                </view>
+              </view>
+          </view>
+      </view>
+      <view class="tab-content {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+          <view class="date-detail am day1">
+              <view class="tableContent">
+                <view class="tr">
+                    <view class="td">9:00-9:30</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:市场营销管理中心</text>
+                      <text class="td-content">主讲人:郭永</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">9:30-10:30</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr spectial">
+                    <view class="td">10:30-11:00</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:S1服务管理中心</text>
+                      <text class="td-content">主讲人:杨虹</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">11:00-12:00</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr">
+                    <view class="td">12:00-13:00</view>
+                    <view class="td">自助午餐</view>
+                </view>
+              </view>
+          </view>
+          <view class="date-detail pm">
+             <view class="tableContent">
+                <view class="tr spectial">
+                    <view class="td">13:00-13:30</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:产品技术管理中心</text>
+                      <text class="td-content">主讲人:杨安荣</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">13:30-14:30</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr spectial" >
+                    <view class="td">14:30-15:00</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:项目管理中心</text>
+                      <text class="td-content">主讲人:张元利</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">15:00-16:00</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr">
+                    <view class="td">16:00-16:20</view>
+                    <view class="td">休息</view>
+                </view>
+                <view class="tr spectial" >
+                    <view class="td">16:20-17:00</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:政法事业群</text>
+                      <text class="td-content">主讲人:石富义</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">17:00-17:30</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr spectial" >
+                    <view class="td">17:30-18:10</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:智慧政务事业群</text>
+                      <text class="td-content">主讲人:杨虹</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">18:10-18:40</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr">
+                    <view class="td">18:40</view>
+                    <view class="td">晚餐</view>
+                </view>
+              </view>
+            </view>
+      </view>
+      <view class="tab-content {{tabArr.curBdIndex=='2'? 'active' : ''}}">
+          <view class="date-detail day2 am">
+               <view class="tableContent">
+                <view class="tr">
+                    <view class="td">8:00-8:40</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:食安事业群</text>
+                      <text class="td-content">主讲人:刘理洲</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">8:40-9:10</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr spectial">
+                    <view class="td">9:10-9:50</view>
+                    <view class="td spectial">
+                      <text class="td-content">议题:档案事业群</text>
+                      <text class="td-content">主讲人:李志卿</text>
+                    </view>
+                </view>
+                <view class="tr">
+                    <view class="td">9:50-10:20</view>
+                    <view class="td">讨论交流</view>
+                </view>
+                <view class="tr">
+                    <view class="td">10:20-11:00</view>
+                    <view class="td">退房、合影</view>
+                </view>
+                <view class="tr">
+                    <view class="td">11:00-12:30</view>
+                    <view class="td">总裁讲话</view>
+                </view>
+                <view class="tr">
+                    <view class="td">12:30</view>
+                    <view class="td">午餐</view>
+                </view>
+              </view>
+          </view>
+          <view class="date-detail pm day2-spectial">
+              <view class="tableContent">            
+                <view class="tr">
+                    <view class="td">下午</view>
+                    <view class="td">统筹安排</view>
+                </view>
+              </view>
+          </view>
+      </view>
+      </scroll-view>
+  </view>
+  <!-- <view class="footer-box">
+      <image src="../../imag/menu/menu_bg.png" class="menu-bg"></image>
+      <navigator class="footer-nav active" url="../home/home">
+        <image src="../../imag/menu/bg_active.png" class="active-img"></image>
+        <image src="../../imag/menu/guide_active.png" class="nav-guide"></image>
+        <text>会议指南</text>
+      </navigator>
+      <navigator class="footer-nav" url="../vote/vote">
+         <image src="../../imag/menu/vote.png" class="nav-guide"></image>
+          <text>会议投票</text>
+      </navigator>
+      <navigator class="footer-nav" url="../sign/sign">
+        <image src="../../imag/menu/sign.png" class="nav-guide"></image>
+        <text>会议签到</text>
+      </navigator>
+   </view> -->
+</view>

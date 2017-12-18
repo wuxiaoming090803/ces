@@ -1,0 +1,31 @@
+<!--pages/sign/sign.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">用餐分组</text>
+  <view class="sign-content">
+  
+      <view class="sign-text" bindtap="formSubmitScan">签 到</view>
+
+    <image src="../../imag/sign_icon.png" class="sign-icon" bind="formSubmitScan"></image>
+  
+    <image src="../../imag/sign_bg.png" class="sign-img"></image>
+
+    
+  </view>
+  <view class="footer-box">
+      <image src="../../imag/menu/menu_bg.png" class="menu-bg"></image>
+      <navigator class="footer-nav" url="../home/home">
+        <image src="../../imag/menu/guide.png" class="nav-guide"></image>
+        <text>会议指南</text>
+      </navigator>
+      <navigator class="footer-nav" url="../vote/vote">
+         <image src="../../imag/menu/vote.png" class="nav-guide"></image>
+          <text>会议投票</text>
+      </navigator>
+      <view class="footer-nav active" >
+        <image src="../../imag/menu/bg_active.png" class="active-img"></image>
+        <image src="../../imag/menu/sign_active.png" class="nav-guide"></image>
+        <text>会议签到</text>
+      </view>
+   </view>
+</view>

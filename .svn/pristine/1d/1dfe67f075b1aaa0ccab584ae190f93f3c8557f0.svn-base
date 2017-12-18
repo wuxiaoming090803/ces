@@ -1,0 +1,23 @@
+<!--pages/group/group.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">会议分组</text>
+  <view class="dinner-content">
+  <image src="../../imag/sign_bg.png" class="meeting-bg"></image>
+     <scroll-view scroll-y="true" class='dinner-scroll' scroll-top="{{scrollTop}}">
+         <view class="dinner-items" id="dinner-items" wx:for="{{groups}}" wx:for-item="item">
+            <view class="dinner-group">
+              <text class="dinner-text" >{{item.group}}</text>
+              <image class="dinner-img" src="../../imag/dinner_group.png"></image>
+            </view>
+            <view class='dinner-users'>
+               <view class="dinner-user {{userId == child.name ? 'active':''}}" wx:for="{{item.user}}" id="{{userId == child.name ? 'scrollId':''}}" wx:for-item="child">{{child.name}}</view>
+               
+            </view>
+            
+         </view>
+     </scroll-view>
+  </view>
+
+</view>
+

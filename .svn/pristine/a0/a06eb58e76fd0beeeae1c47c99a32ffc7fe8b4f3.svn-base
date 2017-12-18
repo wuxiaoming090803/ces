@@ -1,0 +1,86 @@
+<!--pages/schedule/schedule.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">会议投票</text>
+  <view class="schedule-content">
+  <image src="../../imag/sign_bg.png" class="meeting-bg"></image>
+  <scroll-view scroll-y="true" class='dinner-scroll' scroll-top="{{scrollTop}}"> 
+      <view class="schedule-tabs" >
+        <view class="schedule-tab {{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-current="0" bindtap="tabFun">
+            <view class="tab-date">12月15号</view>
+            <view class="tab-week">(周五)</view>  
+            <image src="../../imag/menu/bg_active.png" class="tab-img {{tabArr.curHdIndex=='0'? 'active' : ''}}"></image>        
+        </view>
+        <view class="schedule-tab {{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-current="1" bindtap="tabFun">
+            <view class="tab-date">12月16号</view>
+            <view class="tab-week">(周六)</view>
+            <image src="../../imag/menu/bg_active.png" class="tab-img {{tabArr.curHdIndex=='1'? 'active' : ''}}"></image>          
+        </view>
+        <view class="schedule-tab {{tabArr.curHdIndex=='2'? 'active' : ''}}" id="tab-hd03" data-current="2" bindtap="tabFun">
+            <view class="tab-date">12月17号</view>
+            <view class="tab-week">(周日)</view>
+            <image src="../../imag/menu/bg_active.png" class="tab-img {{tabArr.curHdIndex=='2'? 'active' : ''}}"></image>    
+        </view>
+      </view>
+        <view class="tab-content {{tabArr.curBdIndex=='0'? 'active' : ''}}" wx:for="{{users1}}">
+          <view class="date-detail-text">{{item.time}}</view>
+            <view class="date-detail am">
+              <view class="user-items">
+                <view class="user-info" wx:for="{{item.userInfo}}"  wx:for-item="child" bindtap="bindUrl" data-current="{{child.id}}" data-name="{{child.userName}}" data-dep="{{child.userDept}}">
+                    <image src="{{child.image}}" class="user-photo"></image>
+                    <view class="user-detail">
+                        <text class="user-dep">主讲人:{{child.userName}}</text>
+                        <text class="user-name">议题:{{child.issue}}</text>
+                    </view>
+                </view>
+              </view>
+            </view>
+        </view>
+      <view class="tab-content {{tabArr.curBdIndex=='1'? 'active' : ''}}" wx:for="{{users2}}">
+          <view class="date-detail-text">{{item.time}}</view>
+            <view class="date-detail am">
+              <view class="user-items">
+                <view class="user-info" wx:for="{{item.userInfo}}" bindtap="bindUrl" wx:for-item="child" data-current="{{child.id}}" open-type='navigateBack'>
+                    <image src="{{child.image}}" class="user-photo"></image>
+                    <view class="user-detail">
+                        <text class="user-dep">{{child.userName}}</text>
+                        <text class="user-name">议题:{{child.issue}}</text>
+                    </view>
+                </view>
+              </view>
+            </view>
+      </view>
+      <view class="tab-content {{tabArr.curBdIndex=='2'? 'active' : ''}}" wx:for="{{users3}}">
+          <view class="date-detail-text">{{item.time}}</view>
+            <view class="date-detail am">
+              <view class="user-items">
+                <view class="user-info" wx:for="{{item.userInfo}}" bindtap="bindUrl" wx:for-item="child" data-current="{{child.id}}">
+                    <image src="{{child.image}}" class="user-photo"></image>
+                    <view class="user-detail">
+                        <text class="user-dep">{{child.userName}}</text>
+                        <text class="user-name">议题:{{child.issue}}</text>
+                    </view>
+                </view>
+              </view>
+            </view>
+      </view>
+       </scroll-view>
+  </view>
+  
+  <view class="footer-box">
+      <image src="../../imag/menu/menu_bg.png" class="menu-bg"></image>
+      <view class="footer-nav" bindtap="bindMetting">
+        <image src="../../imag/menu/guide.png" class="nav-guide"></image>
+        <text>会议指南</text>
+      </view>
+      <view class="footer-nav active" >
+         <image src="../../imag/menu/bg_active.png" class="active-img"></image>
+         <image src="../../imag/menu/vote_active.png" class="nav-guide"></image>
+          <text>会议投票</text>
+      </view>
+      <view class="footer-nav" bindtap="bindSign">
+        <image src="../../imag/menu/sign.png" class="nav-guide"></image>
+        <text>会议签到</text>
+      </view>
+   </view>
+</view>

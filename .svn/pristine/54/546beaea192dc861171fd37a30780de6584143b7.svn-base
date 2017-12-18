@@ -1,0 +1,23 @@
+<!--pages/items/items.wxml-->
+<view class="container">
+  <view class="item-info" >
+      <view class="item-info-detail">
+        <view class="item-deparment">部门:人力资源管理中心</view>
+        <view class="item-name">主讲人:张三</view>
+      </view>
+      <view class="items">
+        <view class="iconfont icon-wenti2"></view>
+        <view class="item-number">问题一</view>
+        <view class="iconfont icon-fabulous item-icon"></view>
+        <view class="iconfont icon-zan-copy item-icon"></view>
+        <view class="iconfont icon-liuyan item-icon"></view>
+      </view>
+      <view class="items">
+        <view class="iconfont icon-wenti2"></view>
+        <view class="item-number">问题二</view>
+        <view class="iconfont icon-fabulous item-icon"></view>
+        <view class="iconfont icon-zan-copy item-icon"></view>
+        <view class="iconfont icon-liuyan item-icon"></view>
+      </view>
+  </view>
+</view>

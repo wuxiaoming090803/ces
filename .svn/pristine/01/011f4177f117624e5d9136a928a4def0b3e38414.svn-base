@@ -1,0 +1,8 @@
+<!--pages/sign/sign.wxml-->
+<view class="confirm-btn" bindtap="bind">
+       <form bindsubmit="formSubmitScan">
+        <view class="btn-area">
+          <button type="primary" formType="submit" class='subCls' disabled="{{loaded }}">测试扫一扫</button>
+        </view>
+      </form>
+ </view>

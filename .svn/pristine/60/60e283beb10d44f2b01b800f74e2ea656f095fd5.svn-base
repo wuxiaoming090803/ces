@@ -1,0 +1,54 @@
+<!--pages/items/items.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">会议投票</text>
+  <view class="dinner-content">
+     <scroll-view scroll-y="true" class='dinner-scroll' scroll-top="{{scrollTop}}">
+        <view class="user-info">
+            <image src="../../imag/nav.png" class="item-img"></image>
+            <view class="user-content">
+               <text class="user-dep">人力资源管理中心</text>
+              <text class="user-name">　　一李晓炬</text>
+            </view>
+            <form bindsubmit="formSubmit">
+              <view class="user-items" wx:for="{{issue}}">
+                  <view class="user-topic">{{item.topicTitle}}</view>
+                  <radio-group bindchange="radioChange" name="{{item.id}}" data-current="{{item.id}}">
+                      <label class="radio-group" wx:for="{{item.planTopic}}" wx:for-item="child">
+                        <view class="weui-cell__radio">
+                          <radio value="{{child.id}}" checked='{{child.checked}}'/>
+                        </view>
+                        <view class="weui-cell__radioGroup" style="color:{{item.checked==true ?'#ffffff':'#989898'}};background-color:{{item.checked==true ? '#f04b12':none}}">{{child.topicTitle}}</view>
+                      </label> 
+                </radio-group>
+               
+                <view wx:for="{{curIndex}}" wx:for-item="curItem"> 
+                    <view wx:if="{{curItem.id == item.id}}">
+                      <textarea name="{{item.id}}_content" class="suggest-text"/>
+                    </view>
+                 </view>
+              </view>
+               <view class="btn-area">
+                   <button type="primary" hover-class="hover" formType="submit" class='subCls'>确认</button>
+              </view>
+            </form>
+        </view>
+     </scroll-view>
+  </view>
+  <view class="footer-box">
+      <image src="../../imag/menu/menu_bg.png" class="menu-bg"></image>
+      <navigator class="footer-nav active" url="../home/home">
+        <image src="../../imag/menu/bg_active.png" class="active-img"></image>
+        <image src="../../imag/menu/guide_active.png" class="nav-guide"></image>
+        <text>会议指南</text>
+      </navigator>
+      <navigator class="footer-nav" url="../vote/vote">
+         <image src="../../imag/menu/vote.png" class="nav-guide"></image>
+          <text>会议投票</text>
+      </navigator>
+      <navigator class="footer-nav" url="../sign/sign">
+        <image src="../../imag/menu/sign.png" class="nav-guide"></image>
+        <text>会议签到</text>
+      </navigator>
+   </view>
+</view>

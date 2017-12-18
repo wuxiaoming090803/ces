@@ -1,0 +1,205 @@
+.container {
+  background-color: #fff;
+  min-height: 100%;
+  padding-bottom: 100rpx;
+}
+.ces-logo{
+  width: 100%;
+  height: 100rpx;
+}
+.meeting-bg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  opacity:0.8;
+}
+.meeting-title{
+  position:absolute;
+  text-align:center;
+  width:100%;
+  height:100rpx;
+  line-height:100rpx;
+  color:#fff;
+  font-size:36rpx;
+  top:0;
+  left: 0;
+}
+.schedule-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.schedule-tabs{
+  display:flex;
+  justify-content:space-around;
+  height:115rpx;
+  margin-top:30rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+.schedule-tab{
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  justify-content:center;
+  align-items:center;
+  width: 236rpx;
+  background-color: #ffedc9;
+  border-radius:15rpx;
+}
+.schedule-tab.active{
+  background-color: #f04b12;
+}
+.schedule-tab.active .tab-date,
+.schedule-tab.active .tab-week{
+  color: #fff;
+}
+.tab-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.tab-img.active{
+  display: block;
+}
+.tab-date{
+  z-index: 10;
+  font-size:39rpx;
+  color:#f04b12;
+}
+.tab-week{
+  z-index: 10;
+  font-size:30rpx;
+  color:#f04b12;
+}
+.dinner-scroll{
+  height: 1000rpx;
+}
+.tab-content{
+  display: none;
+}
+.tab-content.active{
+  display: block;
+  padding-bottom: 8rpx;
+}
+.date-detail{
+  transform:translateX(-50%);
+  left:50%;
+  position:relative;
+  border-radius: 15rpx;
+}
+.date-detail-text{
+  width:95%;
+  height:65rpx;
+  line-height:65rpx;
+  margin-left:3%;
+  border-bottom:1px solid #f04b12;
+  color:#f04b12;
+  font-size:32rpx;
+}
+.date-detail.am{
+  width: 100%;
+}
+.user-items{
+  display:flex;
+  justify-content:flex-start;
+  margin-top:20rpx;
+  flex-wrap: wrap;
+}
+.user-info{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  width:340rpx;
+  align-items:center;
+  border:1px solid #f07f55;
+  padding-top:10rpx;
+  padding-bottom:12rpx;
+  border-radius:15rpx;
+  margin-left:23rpx;
+  margin-bottom:20rpx;
+  background-color:#fff9ed;
+}
+.user-photo{
+  width:250rpx;
+  height:242rpx;
+}
+.user-detail{
+  text-align:center;
+  flex: 1;
+}
+.user-dep{
+  display:block;
+  font-size:35rpx;
+  color:black;
+  height:60rpx;
+  line-height:60rpx;
+}
+.user-name{
+  display:block;
+  font-size:32rpx;
+  color:#b8b8b8;
+}
+.date-detail-text.second{
+  margin-top: 45rpx;
+}
+.footer-box{
+  height:120rpx;
+  display:flex;
+  width:100%;
+  position:fixed;
+  bottom:0;
+  left:0;
+  border-top: 1px solid #b79f9f;
+}
+.menu-bg{
+  position: absolute;
+  width: 100%;
+  height:100%;
+}
+.active-img{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index:-1;
+  width:100%;
+}
+.footer-nav.active{
+  position: relative;
+}
+.footer-nav.active text{
+  color: #fff;
+}
+.nav-guide{
+  width:50rpx;
+  height:50rpx;
+  display:block;
+  left:50%;
+  margin-left:-25rpx;
+  position:relative;
+
+}
+.footer-nav text{
+  display:block;
+  flex:1;
+  text-align:center;
+  color: #d63700;
+  margin-top:10rpx;
+}
+.footer-nav{
+  height:120rpx;
+  flex:1;
+  text-align:center;
+  font-size:29rpx;
+
+  z-index:10;
+  padding-top:15rpx;
+}
+.footer-nav:not(:last-child){
+  border-right:1px solid #fff;
+}

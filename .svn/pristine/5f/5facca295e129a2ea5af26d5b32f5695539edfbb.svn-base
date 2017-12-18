@@ -1,0 +1,76 @@
+/* pages/dinner/dinner.wxss */
+.container {
+  background-color: #fff;
+  min-height: 100%;
+  /* padding-bottom: 100rpx; */
+}
+.ces-logo{
+  width: 100%;
+  height: 100rpx;
+}
+.meeting-title{
+  position:absolute;
+  text-align:center;
+  width:100%;
+  height:100rpx;
+  line-height:100rpx;
+  color:#fff;
+  font-size:36rpx;
+  top: 0;
+  left: 0;
+}
+.dinner-count{
+  flex: 1;
+}
+.dinner-content{
+  position:absolute;
+  top:100rpx;
+}
+.dinner-group{
+  margin: 30rpx 30rpx;
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  border-bottom:1px solid #f04b12;
+  padding-bottom:8rpx;
+
+}
+.dinner-text{
+  width:140rpx;
+  font-size:45rpx;
+  color:#f04b12;
+}
+.dinner-scroll{
+  height: 1100rpx;
+}
+.dinner-img{
+  width:45rpx;
+  height:35rpx;
+}
+.meeting-bg{
+  width: 100%;
+  position:absolute;
+  height:100%;
+}
+.dinner-users{
+  display:flex;
+  justify-content:flex-start;
+  align-items:stretch;
+  align-content:stretch;
+  flex-wrap:wrap;
+  text-align:center;
+}
+.dinner-user{
+  width:167rpx;
+  height:105rpx;
+  margin-left:14rpx;
+  margin-bottom:25rpx;
+  border-radius:15rpx;
+  border:1px solid #ddd;
+  line-height:110rpx;
+  font-size:30rpx;
+}
+.dinner-user.active{
+  color: #f04b12;
+  font-weight: bold;
+}

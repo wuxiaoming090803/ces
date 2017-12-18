@@ -1,0 +1,20 @@
+<!--pages/vote/vote.wxml-->
+<view class="container">
+  <view class="vote-users" wx:for="{{users}}" wx:for-item="item">
+      <view class="user-time">{{item.time}}</view>
+      <view class="user-items">
+        <navigator class="user-info" wx:for="{{item.user}}" wx:for-item="child" url="{{child.url}}">
+            <image src="{{child.imag}}" class="user-photo"></image>
+            <view class="user-detail">
+                 <text class="user-dep">{{child.department}}</text>
+                 <text class="user-name">{{child.name}}</text>
+            </view>
+        </navigator>
+      </view>
+       <view class="footer-box">
+      <navigator class="footer-nav">会议指南</navigator>
+      <navigator class="footer-nav" url="../vote/vote">会议投票</navigator>
+      <navigator class="footer-nav">会议签到</navigator>
+   </view>
+  </view>
+</view>

@@ -1,0 +1,222 @@
+/* pages/schedule/schedule.wxss */
+.container {
+  background-color: #fff;
+  min-height: 100%;
+  /* padding-bottom: 100rpx; */
+  margin-bottom: 20rpx;
+  
+}
+.ces-logo{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.meeting-bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  opacity:0.8;
+}
+.meeting-title{
+  position:fixed;
+  text-align:center;
+  width:100%;
+  height:100rpx;
+  line-height:100rpx;
+  color:#fff;
+  font-size:36rpx;
+  top:0;
+  left: 0
+}
+.schedule-content{
+  display:flex;
+  flex: 1;
+  flex-direction:column;
+  justify-content:space-between;
+  position: absolute;
+  top: 100rpx;
+  left: 0;
+  right:0;
+}
+.schedule-tabs{
+  display:flex;
+  justify-content:space-around;
+  height:115rpx;
+  margin-top:30rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+.schedule-tab{
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  justify-content:center;
+  align-items:center;
+  width: 236rpx;
+  background-color: #ffedc9;
+  border-radius:15rpx;
+}
+.schedule-tab.active{
+  background-color: #f04b12;
+}
+.schedule-tab.active .tab-date,
+.schedule-tab.active .tab-week{
+  color: #fff;
+}
+
+.tab-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.tab-img.active{
+  display: block;
+}
+.tab-date{
+  z-index: 10;
+  font-size:39rpx;
+  color:#f04b12;
+
+}
+.tab-week{
+  z-index: 10;
+  font-size:30rpx;
+  color:#f04b12;
+}
+
+.tab-content{
+  display: none;
+}
+.tab-content.active{
+  display: block;
+}
+.schedule-detail{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.tableContent{
+  border-right:0;
+  border-bottom:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  font-size:30rpx;
+}
+.tr{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.tr:last-child .td{
+  border-bottom: none;
+}
+.tr.spectial{
+  height: 120rpx;
+}
+.td{
+  padding: 8px;
+  border-bottom: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+  text-align: center;
+  width:40%;
+}
+.td:last-child{
+  border-right: 0;
+  width: 100%;
+}
+.td-content{
+  display: block;
+}
+.dinner-scroll{
+  height: 1100rpx;
+}
+.date-detail{
+  width:95%;
+  border:1px solid #f04b12;
+  transform:translateX(-50%);
+  left:50%;
+  position:relative;
+  margin-top:32rpx;
+  border-radius: 15rpx;
+  padding-left:8rpx;
+  margin-bottom:25rpx;
+}
+.date-detail.am{
+  height:320rpx;
+}
+.date-detail.day1.am{
+  height: 420rpx;
+}
+.date-detail.day2.am{
+  height: 570rpx;
+}
+.date-detail.pm{
+  height: 910rpx;
+}
+.date-detail.pm.day2-spectial{
+  height: 80rpx;
+}
+.footer-box{
+  height:120rpx;
+  display:flex;
+  width:100%;
+  position:fixed;
+  bottom:0;
+  left:0;
+  border-top: 1px solid #b79f9f;
+}
+.menu-bg{
+  position: absolute;
+  width: 100%;
+  height:100%;
+}
+.active-img{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index:-1;
+  width:100%;
+}
+.footer-nav.active{
+  position: relative;
+}
+.footer-nav.active text{
+  color: #fff;
+}
+.nav-guide{
+  width:50rpx;
+  height:50rpx;
+  display:block;
+  left:50%;
+  margin-left:-25rpx;
+  position:relative;
+
+}
+.footer-nav text{
+  display:block;
+  flex:1;
+  text-align:center;
+  color: #807b75;
+  margin-top:10rpx;
+}
+.footer-nav{
+  height:120rpx;
+  flex:1;
+  text-align:center;
+  font-size:29rpx;
+
+  z-index:10;
+  padding-top:15rpx;
+}
+.footer-nav:not(:last-child){
+  border-right:1px solid #fff;
+}

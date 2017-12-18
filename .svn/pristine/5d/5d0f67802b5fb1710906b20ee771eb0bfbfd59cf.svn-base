@@ -1,0 +1,34 @@
+<!--pages/dinner/dinner.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">用餐分组</text>
+  <view class="dinner-content">
+     <scroll-view scroll-y="true" class='dinner-scroll' scroll-top="{{scrollTop}}">
+         <view class="dinner-items" id="dinner-items" wx:for="{{groups}}" wx:for-item="item">
+            <view class="dinner-group" >
+              <text class="dinner-text" >{{item.group}}</text>
+              <image class="dinner-img" src="../../imag/dinner_group.png"></image>
+            </view>
+            <view class='dinner-users'>
+               <view class="dinner-user"  wx:for="{{item.user}}" wx:for-item="child">{{child.name}}</view>
+            </view>
+         </view>
+     </scroll-view>
+  </view>
+  <!-- <view class="footer-box">
+      <image src="../../imag/menu/menu_bg.png" class="menu-bg"></image>
+      <navigator class="footer-nav active" url="../home/home">
+        <image src="../../imag/menu/bg_active.png" class="active-img"></image>
+        <image src="../../imag/menu/guide_active.png" class="nav-guide"></image>
+        <text>会议指南</text>
+      </navigator>
+      <navigator class="footer-nav" url="../vote/vote">
+         <image src="../../imag/menu/vote.png" class="nav-guide"></image>
+          <text>会议投票</text>
+      </navigator>
+      <navigator class="footer-nav" url="../sign/sign">
+        <image src="../../imag/menu/sign.png" class="nav-guide"></image>
+        <text>会议签到</text>
+      </navigator>
+   </view> -->
+</view>

@@ -1,0 +1,14 @@
+/* pages/sign/sign.wxss */
+.confirm-btn {
+  font-size: 13pt;
+  line-height: 85rpx;
+  height: 85rpx;
+  background: #6699FF;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  margin: 50rpx 10%;
+}
+.confirm-btn:active {
+  opacity: .8;
+}

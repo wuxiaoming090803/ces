@@ -1,0 +1,20 @@
+<!--pages/dinner/dinner.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">交通安排</text>
+  <view class="dinner-content">
+    <image src="../../imag/sign_bg.png" class="meeting-bg"></image>
+     <scroll-view scroll-y="true" class='dinner-scroll' scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+         <view class="dinner-items" id="dinner-items" wx:for="{{groups}}" wx:for-item="item">
+            <view class="dinner-group" >
+              <text class="dinner-text" >{{item.group}}</text>
+              <image class="dinner-img" src="../../imag/traffic.png"></image>
+            </view>
+            <view class='dinner-users'>
+               <view wx:for="{{item.user}}" wx:for-item="child" class="dinner-user {{userId == child.name ? 'active':''}}" id="{{child.name}}" >{{child.name}}</view>
+            </view>
+         </view>
+     </scroll-view>
+  </view>
+</view>
+

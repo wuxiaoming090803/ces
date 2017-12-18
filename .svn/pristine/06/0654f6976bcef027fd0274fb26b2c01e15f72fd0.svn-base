@@ -1,0 +1,62 @@
+<!--pages/hotel/hotel.wxml-->
+<!--pages/dinner/dinner.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">住宿安排</text>
+  <view class="dinner-content">
+     <scroll-view scroll-y="true" class='dinner-scroll' scroll-top="{{scrollTop}}">
+         <view class="dinner-items" id="dinner-items">
+            <view class="dinner-group">
+            </view>
+            <view class='dinner-users'>
+               <view class="dinner-user" >张曙华</view>
+            </view>
+            <view class="dinner-group"></view>
+            <view class='dinner-users' >
+               <view class="dinner-user" >张曙华</view>
+               <view class="dinner-user">杨安荣</view>
+               <view class="dinner-user">刘理洲</view>
+               <view class="dinner-user">郭永</view>
+               <view class="dinner-user">张元利</view>
+               <view class="dinner-user">杨虹</view>
+               <view class="dinner-user">李志卿</view>
+               <view class="dinner-user">张颖</view>
+               <view class="dinner-user">石富义</view>
+               <view class="dinner-user">徐云蔚</view>
+               <view class="dinner-user">张左平</view> 
+            </view>
+            <view class="dinner-group"></view>
+            <view class='dinner-users' >
+               <view class="dinner-user" >张曙华</view>
+               <view class="dinner-user">杨安荣</view>
+               <view class="dinner-user">刘理洲</view>
+               <view class="dinner-user">郭永</view>
+               <view class="dinner-user">张元利</view>
+               <view class="dinner-user">杨虹</view>
+               <view class="dinner-user">李志卿</view>
+               <view class="dinner-user">张颖</view>
+               <view class="dinner-user">石富义</view>
+               <view class="dinner-user">徐云蔚</view>
+               <view class="dinner-user">张左平</view> 
+            </view>
+         </view>
+     </scroll-view>
+  </view>
+  <view class="footer-box">
+      <image src="../../imag/menu/menu_bg.png" class="menu-bg"></image>
+      <view class="footer-nav active">
+        <image src="../../imag/menu/bg_active.png" class="active-img"></image>
+        <image src="../../imag/menu/guide_active.png" class="nav-guide"></image>
+        <text>会议指南</text>
+      </view>
+      <navigator class="footer-nav" url="../vote/vote">
+         <image src="../../imag/menu/vote.png" class="nav-guide"></image>
+          <text>会议投票</text>
+      </navigator>
+      <navigator class="footer-nav" url="../sign/sign">
+        <image src="../../imag/menu/sign.png" class="nav-guide"></image>
+        <text>会议签到</text>
+      </navigator>
+   </view>
+</view>
+

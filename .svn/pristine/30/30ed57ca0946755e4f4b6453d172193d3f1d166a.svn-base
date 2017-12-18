@@ -1,0 +1,44 @@
+<!--pages/hotel/hotel.wxml-->
+<!--pages/dinner/dinner.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">住宿安排</text>
+  <view class="dinner-content">
+  <image src="../../imag/sign_bg.png" class="meeting-bg"></image>
+     <scroll-view scroll-y="true" class='dinner-scroll' scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="dinner-items" id="dinner-items" wx:for="{{groups}}" wx:for-item="item">
+            <view class="dinner-group"></view>
+            <view class='dinner-users'>
+               <view class="dinner-user single {{userId == child.name ? 'active':''}}"  wx:for="{{item.user}}" wx:for-item="child" id="{{userId == child.name ? 'scrollId':''}}">{{child.name}}</view>
+            </view>
+         </view>
+         <view class="dinner-items" id="dinner-items" >
+            <view class="dinner-group"></view>
+            <view class='dinner-users'>
+               <view class="dinner-user" wx:for="{{groups1}}" wx:for-item="item">
+                  <view wx:for="{{item.user}}" wx:for-item="child" id="{{userId == child.name ? 'scrollId':''}}" class="hotel {{userId == child.name ? 'active':''}}">{{child.name}}</view> 
+                
+               </view>
+
+            </view>
+         </view>
+     </scroll-view>
+  </view>
+  <!-- <view class="footer-box">
+      <image src="../../imag/menu/menu_bg.png" class="menu-bg"></image>
+      <navigator class="footer-nav active" url="../home/home">
+        <image src="../../imag/menu/bg_active.png" class="active-img"></image>
+        <image src="../../imag/menu/guide_active.png" class="nav-guide"></image>
+        <text>会议指南</text>
+      </navigator>
+      <navigator class="footer-nav" url="../vote/vote">
+         <image src="../../imag/menu/vote.png" class="nav-guide"></image>
+          <text>会议投票</text>
+      </navigator>
+      <navigator class="footer-nav" url="../sign/sign">
+        <image src="../../imag/menu/sign.png" class="nav-guide"></image>
+        <text>会议签到</text>
+      </navigator>
+   </view> -->
+</view>
+

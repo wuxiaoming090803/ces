@@ -1,0 +1,214 @@
+// pages/items/items.js
+const util = require("../../utils/util.js");
+const Config = require("../../config.js");
+const Storage = require("../../storage.js");
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    arry: {},
+    curIndex: [],
+    userDept:  "",
+    userName: "",
+    curId: '',
+    issue: [],
+    // issue: [
+    //   {
+    //     id:"111",
+    //     content:"cont_1",
+    //     topicTitle: "问题一:2018年如何优化人力资源管理制度",
+    //     planTopic: [{ topicTitle: '方案一', id: "11" }, { topicTitle: '方案二', id: "12" }, { topicTitle: '方案三', id: "13" }, { topicTitle: '方案四', id: "14" }, { topicTitle: '保留意见', id: "suggest_1" }]
+    //   },{
+    //     id: "112",
+    //     content: "cont_2",
+    //     topicTitle: "问题二:2018年如何优化人力资源管理制度",
+    //     planTopic: [{ topicTitle: '方案一', id: "21" }, { topicTitle: '方案二', id: "22" }, { topicTitle: '方案三', id: "23" }, { topicTitle: '保留意见', id: "suggest_2" }]
+    //   },{
+    //     id: "113",
+    //     content: "cont_3",
+    //     topicTitle: "问题二:2018年如何优化人力资源管理制度",
+    //     planTopic: [{ topicTitle: '同意', id: "31" }, { topicTitle: '不同意', id: "32" }, { topicTitle: '保留意见', id: "suggest_3" }]
+    //   }, {
+    //     id: "114",
+    //     topicTitle: "问题二:2018年如何优化人力资源管理制度",
+    //     planTopic: [{ topicTitle: '同意', id: "41" }, { topicTitle: '不同意', id: "42" }, { topicTitle: '保留意见', id: "suggest_4" }]
+    //   },
+    //   {
+    //     id: "115",
+    //     topicTitle: "问题二:2018年如何优化人力资源管理制度",
+    //     planTopic: [{ topicTitle: '同意', id: "51" }, { topicTitle: '不同意', id: "52" }, { topicTitle: '保留意见', id: "suggest_5" }]
+    //   }
+    // ]
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this;
+    //当前登录人的openId
+    var openId = Storage.get("openId");
+    wx.request({
+      url: Config.appurl + '/topic/getTopicData',
+      data: {
+        userId: options.userId,
+        openId: openId
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        that.setData({
+          issue: res.data.question,
+          userDept: res.data.userDept,
+          userName: res.data.userName
+        })
+        debugger;
+        console.log("分组方案后台返回数据" + res.data);
+      }
+    })
+  },
+  textAreaChange: function(e) {
+    console.log("textAreaChange");
+    var text = e.detail.value;
+    var index = e.currentTarget.dataset.index;
+    var issue = this.data.issue;
+    issue[index].planTopic[issue[index].planTopic.length - 1].voteCommit = text;
+    this.setData({
+      issue: issue
+    });
+  },
+  radioChange: function (e) {
+    console.log("radioChange");
+    this.setData({
+      isShow: false
+    });
+    var logo = e.detail.value.split("_")[0];
+    var currentId = e.currentTarget.dataset.current;
+    var items = this.data.issue;
+    for (var i = 0, len = items.length; i < len; ++i) {
+      var issue = items[i];
+      if (issue.id == currentId) {
+        var schemes = issue.planTopic
+        for (var j = 0; j < schemes.length; j++) {
+          schemes[j].checked = schemes[j].id == e.detail.value;
+        }
+      }
+    }
+    this.setData({
+      issue: items
+    });
+  },
+  formSubmit: function (e) {
+    var that = this;
+    console.log('form发生了submit事件，携带数据为：', e.detail.value);
+    //判断是否重复提交
+    //发送请求看是否提交过投票
+    wx.request({
+      url: Config.appurl + '/vote/queryVoteByOpenId',
+      data:{
+        openId: Storage.get("openId")
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (r1) {
+            if(r1.data) {//提交过
+              wx.showModal({
+                title: '提示',
+                content: '本次提交将覆盖上次的投票数据',
+                success: function (res) {
+                  if (res.confirm) {
+                    console.log('用户点击确定');
+                    that.saveVote(e);
+                    //继续投票
+                  } else if (res.cancel) {
+                    //取消不做任何操作
+                    console.log('用户点击取消')
+                  }
+                }
+              })
+            } else if (!r1.data){//没有提交过
+              that.saveVote(e);
+             
+            }
+      }
+
+    })
+    
+  },
+  saveVote : function(e) {
+    wx.request({
+      url: Config.appurl + '/vote/saveVote', //保存投票结果
+      data: {
+        openId: Storage.get("openId"),//当前登录人的openId
+        voteData: e.detail.value //表单提交数据
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        if (res.data == 1) {
+          wx.showToast({
+            title: '投票成功',
+            icon: 'success',
+            duration: 3000
+          })
+          wx.navigateBack({
+            url:"../../vote/vote"
+          })
+        }
+        console.log("------------投票成功-----------" + res.data)
+      }
+    })   
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

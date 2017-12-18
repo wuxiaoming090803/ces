@@ -1,0 +1,54 @@
+<!--home.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">会议指南</text>
+  <view class="meeting-type">
+    <view class='meeting-item'>
+        <navigator class='main-core-item' url="../tpo/tpo">
+            <image class="core-item-icon" src="../../imag/guide/time.png"></image>
+            <text class="core-item-name">时间地点</text>
+        </navigator>
+        <navigator class='main-core-item' url="../dinner/dinner">
+            <image class="core-item-icon" src="../../imag/guide/dinner.png"></image>
+            <text class="core-item-name">用餐分组</text>
+        </navigator>
+    </view>
+    <view class='meeting-item'>
+        <navigator class='main-core-item' url="../schedule/schedule">
+            <image class="core-item-icon" src="../../imag/guide/schedule.png"></image>
+            <text class="core-item-name">会议议程</text>
+        </navigator>
+        <navigator class='main-core-item' url="../hotel/hotel">
+            <image class="core-item-icon" src="../../imag/guide/staying.png"></image>
+            <text class="core-item-name">住宿安排</text>
+        </navigator>
+    </view>
+    <view class='meeting-item'>
+        <navigator class='main-core-item' url="../group/group">
+            <image class="core-item-icon" src="../../imag/guide/group.png"></image>
+            <text class="core-item-name">会议分组</text>
+        </navigator>
+        <navigator class='main-core-item'>
+            <image class="core-item-icon" src="../../imag/guide/traffic.png"></image>
+            <text class="core-item-name">交通安排</text>
+        </navigator>
+    </view>
+  </view>
+   <view class="footer-box">
+      <image src="../../imag/menu/menu_bg.png" class="menu-bg"></image>
+      <view class="footer-nav active">
+        <image src="../../imag/menu/bg_active.png" class="active-img"></image>
+        <image src="../../imag/menu/guide_active.png" class="nav-guide"></image>
+        <text>会议指南</text>
+      </view>
+      <navigator class="footer-nav" url="../vote/vote">
+         <image src="../../imag/menu/vote.png" class="nav-guide"></image>
+          <text>会议投票</text>
+      </navigator>
+      <navigator class="footer-nav" url="../sign/sign">
+        <image src="../../imag/menu/sign.png" class="nav-guide"></image>
+        <text>会议签到</text>
+      </navigator>
+   </view>
+  
+</view>

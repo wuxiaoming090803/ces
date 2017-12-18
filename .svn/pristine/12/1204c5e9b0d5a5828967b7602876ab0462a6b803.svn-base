@@ -1,0 +1,80 @@
+// pages/group/group.js
+const Storage = require("../../storage.js");
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    userId: Storage.get("currentUserName"),
+    toView: "scrollId",
+    groups: [
+      {
+        group: "第一组",
+        user: [{ name: "张曙华" }, { name: "杨安荣" }, { name: "刘理洲" }, { name: "郭永" }, { name: "张元利" }, { name: "杨虹" }, { name: "李志卿" }, { name: "张颖" }, { name: "石富义" }, { name: "徐云蔚" }, { name: "张左平" }]
+      }, {
+        group: "第二组",
+        user: [{ name: "潘文靓" }, { name: "路斌" }, { name: "陈若初" }, { name: "吴春磊" }, { name: "张永杰" }, { name: "李晓冬" }, { name: "牟波" }, { name: "水洪江" }, { name: "徐文影" }, { name: "彭广兵" }]
+      }, {
+        group: "第三组",
+        user: [{ name: "李晓炬" }, { name: "易江南" }, { name: "金晓东" }, { name: "季力" }, { name: "周杰" }, { name: "黄元俊" }, { name: "周小萍" }, { name: "汪柳" }, { name: "秦超" }, { name: "黄美生" }]
+      }
+    ]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
+  }
+})

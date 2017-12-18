@@ -1,0 +1,54 @@
+/* pages/home/home.wxss */
+.container {
+  background-color: #F2f2f2;
+  min-height: 100%;
+  padding-bottom: 100rpx;
+}
+.meeting-type{
+  padding-left:25rpx;
+  padding-right:25rpx;
+}
+.ces-logo{
+  width: 100%;
+  height: 380rpx;
+}
+.core-item-icon{
+  width: 150rpx;
+  height: 145rpx;
+}
+.core-item-name{
+  display: block;
+  font-size: 30rpx;
+}
+.meeting-item{
+  display:flex;
+  flex-direction:row;
+  align-items:stretch;
+  justify-content:space-around;
+  padding-top:15px;
+}
+.main-core-item{
+  border:1px solid #ddd;
+  border-radius:25rpx;
+  width:220rpx;
+  text-align: center
+}
+.footer-box{
+  height:100rpx;
+  display:flex;
+  width:100%;
+  position:fixed;
+  bottom:0;
+  left:0;
+  box-shadow:0 0 8rpx 0;
+}
+.footer-nav{
+  height:100rpx;
+  flex:1;
+  line-height:100rpx;
+  text-align:center;
+  font-size:35rpx;
+  background-color:#7acfa6;
+  color:#fff;
+  border-left:1px solid #ddd;
+}

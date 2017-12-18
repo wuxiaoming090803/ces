@@ -1,0 +1,54 @@
+<!--pages/items/items.wxml-->
+<view class="toast_mask" wx:if="{{isShowToast}}"></view> 
+<!--以下为toast显示的内容-->
+<view class="toast_content_box" wx:if="{{isShowToast}}"> 
+  <view class="toast_content"> 
+    <view class="toast_content_text"> 
+        {{toastText}} 
+    </view> 
+  </view> 
+</view>
+<view class="container">
+  
+  <view class="dinner-content">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">会议投票</text>
+    <!-- <image src="../../imag/sign_bg.png" class="meeting-bg"></image> -->
+       <view class="user-info">
+        <image src="../../imag/menu/bg_active.png" class="item-img"></image>
+        <view class="user-content">
+          <text class="user-dep">人力资源管理</text>
+          <text class="user-name">一李晓</text>
+          <view class="user-count" bindtap="search" >查看统计结果
+          <image src="../../imag/search.png" class="item-search"></image>
+          </view>
+        </view>
+        <form bindsubmit="formSubmit">
+          <view class="user-items" wx:for="{{issue}}">
+            <view class="user-topic"><text class="topic-issue">{{item.topicTitle}}</text><text>{{item.topicComment}}</text></view>
+            <radio-group bindchange="radioChange" name="{{item.id}}" data-current="{{item.id}}">
+              <label class="radio-group" wx:for="{{item.planTopic}}" wx:for-item="child">
+                <view class="weui-cell__radio">
+                  <radio value="{{child.id}}" checked='{{child.checked}}' />
+                </view>
+                <view class="weui-cell__radioGroup" style="color:{{item.checked==true ?'#ffffff':'#666666'}};background-color:{{item.checked==true ? '#f04b12':none}}">{{child.topicTitle}}</view>
+              </label>
+            </radio-group>
+
+            <view style='display: {{item.planTopic[item.planTopic.length-1].checked ? "block" : "none"}}'>
+              <textarea name="{{item.id}}_content" class="suggest-text" value="{{item.planTopic[item.planTopic.length-1].voteCommit}}" maxlength="200"
+                data-index="{{index}}" bindblur="textAreaChange" bindinput="textAreaChange" bindconfirm="textAreaChange" />
+            </view>
+          </view>
+          <view class="btn-area">
+            <button type="primary" hover-class="hover" formType="submit" class='subCls'>提交</button>
+          </view>
+        </form>
+      </view> 
+    <!-- </scroll-view> -->
+  </view>
+    <!-- <view class="footer-box">
+    <image src="../../imag/menu/menu_bg.png" class="menu-bg"></image> -->
+    
+<!-- </view>  -->
+</view>

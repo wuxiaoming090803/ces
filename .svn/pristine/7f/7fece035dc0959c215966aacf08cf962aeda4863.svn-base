@@ -1,0 +1,28 @@
+<!--login.wxml-->
+<view class="container">
+    <!-- <image class="title" src="/imag/banner.png"></image> -->
+    <view class="logoTitle">砥砺前行 持续改进</view>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+          <image class="logo" src="/imag/more/logo.png"></image>
+          <image class="wave" src="/imag/more/wave.png" mode="aspectFill"></image>
+          <image class="wave wave-bg" src="/imag/more/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+        <form class="login-form" bindsubmit="formSubmit">
+          <view class="input-group {{userid_focus ? 'active' : ''}} first">
+            <text class="input-label">姓名</text>
+            <input type="number" cursor-spacing="30" id="name" name="name"  placeholder="请输入姓名" bindinput="useridInput" bindfocus="inputFocus" bindblur="inputBlur" />
+          </view>
+          <view class="input-group {{passwd_focus ? 'active' : ''}}">
+            <text class="input-label">手机号</text>
+            <input  cursor-spacing="30" id="mobile" name="mobile" placeholder="请输入手机号" bindinput="passwdInput" bindfocus="inputFocus" bindblur="inputBlur" />
+          </view>
+          <view class="btn-area">
+            <button type="primary" formType="submit" class='subCls' disabled="{{!loaded }}">登录</button>
+          </view>
+        </form>
+      </view>
+    </view>
+
+</view>

@@ -1,0 +1,41 @@
+<!--home.wxml-->
+<view class="container">
+  <image src="../../imag/banner.png" class="ces-logo"></image>
+  <view class="meeting-type">
+    <view class='meeting-item'>
+        <navigator class='main-core-item'>
+            <image class="core-item-icon" src="../../imag/index/more.png"></image>
+            <text class="core-item-name">时间地点</text>
+        </navigator>
+        <navigator class='main-core-item'>
+            <image class="core-item-icon" src="../../imag/index/index.png"></image>
+            <text class="core-item-name">会议议程</text>
+        </navigator>
+    </view>
+    <view class='meeting-item'>
+        <navigator class='main-core-item'>
+            <image class="core-item-icon" src="../../imag/index/more.png"></image>
+            <text class="core-item-name">时间地点</text>
+        </navigator>
+        <navigator class='main-core-item'>
+            <image class="core-item-icon" src="../../imag/index/index.png"></image>
+            <text class="core-item-name">会议议程</text>
+        </navigator>
+    </view>
+    <view class='meeting-item'>
+        <navigator class='main-core-item'>
+            <image class="core-item-icon" src="../../imag/index/more.png"></image>
+            <text class="core-item-name">时间地点</text>
+        </navigator>
+        <navigator class='main-core-item'>
+            <image class="core-item-icon" src="../../imag/index/index.png"></image>
+            <text class="core-item-name">会议议程</text>
+        </navigator>
+    </view>
+  </view>
+   <view class="footer-box">
+      <navigator class="footer-nav">会议指南</navigator>
+      <navigator class="footer-nav" url="../vote/vote">会议投票</navigator>
+      <navigator class="footer-nav">会议签到</navigator>
+   </view>
+</view>

@@ -1,0 +1,35 @@
+<!--login.wxml-->
+<view class="container">
+    <image class="title" src="/imag/logo/logo_bg.png"></image>
+    <view class="logoTitle">
+       <!-- <image class="logo" src="/imag/logo/logo.png"></image> -->
+       <image class="logo_title" src="/imag/logo_copy.png"></image>
+    </view>
+    <view class="content">
+      <view class="bd">
+        <form class="login-form" bindsubmit="formSubmit">
+          <view class="input-group first">
+            <view class="input-content">
+              <image class="user" src="/imag/logo/user.png"></image>
+              <input class="weui-input" id="name" name="name"  placeholder="请输入姓名" placeholder-style="color:#f48c8b" bindinput="useridInput" bindfocus="inputFocus" bindblur="inputBlur" />
+            </view>
+            <image class="border_img" src="/imag/logo/border.png"></image> 
+          </view>
+          <view class="input-group">
+            <view class="input-content">
+               <image class="user" src="/imag/logo/phone.png"></image>
+              <input  type="number" cursor-spacing="30" id="mobile" name="mobile" placeholder="请输入手机号" placeholder-style="color:#f48c8b" bindinput="passwdInput" bindfocus="inputFocus" bindblur="inputBlur" />
+            </view>
+             <image class="border_img" src="/imag/logo/border.png"></image> 
+          </view>
+          <view class="btn-area">
+            <button type="primary" formType="submit" hover-class="none" class='subCls'>登　　录</button>
+          </view>
+        </form>
+      </view>
+      <!-- <view class="theme">
+        <image src="/imag/title.png" class="theme-img"></image>
+      </view> -->
+    </view>
+
+</view>

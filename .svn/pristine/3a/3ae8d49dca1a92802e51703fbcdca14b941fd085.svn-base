@@ -1,0 +1,25 @@
+<!--pages/count/count.wxml-->
+<view class="container">
+  <image src="../../imag/nav.png" class="ces-logo"></image>
+  <text class="meeting-title">投票统计</text>
+  
+    <view class="count-content">
+    <view  wx:if="{{isInit == false}}" class="count-vote">未开始投票</view>
+    <view class="content-charts" wx:for="{{users}}" wx:for-item="item">
+        <view class="issue-item">{{item.topicTitle}}{{item.topicCommit}}</view>
+        <canvas canvas-id="pieCanvas_{{item.topicId}}" class="canvas" style="height:310px" bindtouchstart="touchHandler"></canvas>
+    </view> 
+    </view>
+     <!-- <scroll-view scroll-y="true" class='dinner-scroll' scroll-top="{{scrollTop}}">  -->
+        <!-- <view class="user-info">
+            <image src="../../imag/nav.png" class="item-img"></image>
+            <view class="user-content">
+               <text class="user-dep">人力资源管理中心</text>
+              <text class="user-name">　　一李晓炬</text>
+            </view>
+        </view> -->
+         <!-- <view class="content-charts" >
+  
+        </view> -->
+      <!-- </scroll-view> -->
+</view>

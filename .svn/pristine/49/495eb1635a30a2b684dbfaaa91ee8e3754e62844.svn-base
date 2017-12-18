@@ -1,0 +1,147 @@
+//app.js
+//解密工具类
+var sync = require("./utils/sync.js");
+const util = require("./utils/util.js");
+const Config = require("./config.js");
+const Storage = require("./storage.js");
+
+App({
+  //全局数据
+  globalData: {
+    loaded: false,
+    isLogin: false //登录状态
+  },
+
+  /**
+   * 获取用户信息并登录
+   */
+  getUserInfo: function () {
+    var _this = this;
+    wx.checkSession({
+      success: function (res) {
+        //session 未过期，并且在本生命周期一直有效
+        console.log("session未过期");
+        let openId = Storage.get("openId")
+        if (!openId) {
+          _this.acquireUserInfo(function () {
+            _this.globalData.loaded = true;
+          });
+        } else {
+          _this.globalData.loaded = true;
+        }
+
+      },
+      fail: function () {
+        //登录态过期
+        console.log("已经过期");
+        //重新登录
+        _this.acquireUserInfo(function () {
+          _this.globalData.loaded = true;
+        });
+      }
+    })
+  },
+
+  /**
+   * 获取用户信息
+   * 1.先登录
+   * 2.获取用户信息
+   * 3.获取openId
+   * 4.回调函数
+   */
+  acquireUserInfo: function (callback) {
+    var _this = this;
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          var code = res.code;
+          //清除sessionid
+          Storage.remove("sessionId");
+          //获取用户的信息
+          wx.getUserInfo({
+            withCredentials: true,
+            lang: 'zh_CN ',
+            success: function (res) {
+              console.log("------获取UserInfo成功-------")
+              //设置全局信息
+              Storage.set("userInfo", res.userInfo);
+              // 发送 res.code 到后台换取 openId, sessionKey, unionId
+              wx.request({
+                url: Config.appurl + '/wx/userInfo',
+                data: {
+                  code: code
+                },
+                header: {
+                  "Content-Type": "application/x-www-form-urlencoded"
+                },
+                method: 'GET',
+                success: function (res1) {
+                  if (res1.statusCode != 200) {
+                    return;
+                  }
+                  let sessionId = res1.data.sessionId
+                  Storage.set("sessionId", sessionId)
+                  let openId = res1.data.openId
+                  //用户ID不同，清除缓存
+                  if (openId != Storage.get("openId")) {
+                    Storage.set("openId", openId)
+                    Storage.remove("isLogin");
+                  }
+                  callback && callback(res1);
+                },
+                fail() {
+                  console.log('----获取用户openID失败----------');
+                }
+              })
+            },
+            fail: function (res) {
+              console.log("获取用户信息失败：" + res.errMsg)
+              _this.gainOpenId()
+            },
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg);
+
+        }
+      }
+    });
+  },
+
+  /**
+   * 获取用户的openId,包括强制授权
+   */
+  //暂时不用
+  gainOpenId: function (userInfoReadyCallback) {
+    var _this = this;
+    var openId = Storage.get("openId");
+    if (!openId) {
+      wx.getSetting({
+        success: function success(res) {
+          if (!res.authSetting['scope.userInfo']) {
+            wx.hideLoading();
+            wx.showModal({
+              title: '用户未授权',
+              content: '请授权您的用户信息',
+              showCancel: false,
+              success: function (res) {
+                if (res.confirm) {
+                  wx.openSetting({
+                    success: function success(res) {
+                      // _this.acquireUserInfo(function (res) {
+                      //   userInfoReadyCallback()
+                      // });
+                    }
+                  });
+                }
+              }
+            })
+          }
+        }
+      });
+    }
+  },
+  onShow: function () {
+
+  },
+
+})

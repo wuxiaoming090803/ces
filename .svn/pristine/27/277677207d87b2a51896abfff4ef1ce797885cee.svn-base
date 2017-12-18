@@ -1,0 +1,4 @@
+<!--pages/sign/sign.wxml-->
+<view class="confirm-btn" bindtap="bind">
+       <text>签到</text>
+ </view>

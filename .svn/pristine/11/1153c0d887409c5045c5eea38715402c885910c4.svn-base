@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/home/home",
+    "pages/tpo/tpo",
+    "pages/dinner/dinner",
+    "pages/schedule/schedule",
+    "pages/hotel/hotel",
+    "pages/group/group",
+    "pages/vote/vote",
+    "pages/items/items",
+    "pages/sign/sign",
+    "pages/count/count"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "信息发展2017务虚会",
+    "navigationBarTextStyle":"black"
+  }
+}
